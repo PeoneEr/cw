@@ -8,5 +8,4 @@ class SuppliersController < ApplicationController
   def update
     update! { root_path }
   end
-
 end
