@@ -1,0 +1,25 @@
+<div class="add_link">
+  <%= link_to "Добавить", new_supplier_path  %>
+</div>
+<table>
+  <thead>
+    <th>Название</th>
+    <th>Телефон</th>
+    <th>Email</th>
+    <th>Адрес</th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @suppliers.each do |supplier| %>
+      <tr>
+        <td><%= supplier.title %></td>
+        <td><%= supplier.phone %></td>
+        <td><%= supplier.email %></td>
+        <td><%= supplier.address %></td>
+        <td><%= link_to "Изменить", edit_supplier_path(supplier.id) %></td>
+        <td><%= link_to "Удалить", supplier_path(supplier.id), method: :delete, confirm: "Вы уверены?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
