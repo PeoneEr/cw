@@ -1,4 +1,5 @@
 <%= simple_form_for @supply do |f| %>
+  <%= f.input :shipment_id, as: :select, collection: Shipment.all.sort %>
   <%= f.input :supplier_id, as: :select, collection: Supplier.all.sort %>
   <%= f.input :count %>
   <%= f.submit "Добавить" %>

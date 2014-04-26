@@ -13,7 +13,7 @@
   <tbody>
     <% @supplies.each do |supply| %>
       <tr>
-        <td>Название</td>
+        <td><%= supply.shipment.title unless supply.shipment.nil? %></td>
         <td><%= supply.supplier.title unless supply.supplier.nil? %></td>
         <td><%= supply.updated_at %></td>
         <td><%= supply.count %></td>

@@ -1,0 +1,23 @@
+<div class="add_shipment">
+  <%= link_to "Добавить", new_shipment_path %>
+</div>
+<table>
+  <thead>
+    <th>Название товара</th>
+    <th>Срок годности</th>
+    <th>Цена</th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @shipments.each do |shipment| %>
+      <tr>
+        <td><%= shipment.title %></td>
+        <td><%= shipment.time_expired %></td>
+        <td><%= shipment.price %></td>
+        <td><%= link_to "Изменить", edit_shipment_path(shipment.id) %></td>
+        <td><%= link_to "Удалить", shipment_path(shipment.id), method: :delete, confirm: "Вы уверены?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
