@@ -1,0 +1,23 @@
+<div class="add_store">
+  <%= link_to "Добавить", new_store_path %>
+</div>
+<table>
+  <thead>
+    <th>Принял</th>
+    <th>Дата принятия</th>
+    <th>Товар</th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @stores.each do |store| %>
+      <tr>
+        <td>Принял</td>
+        <td><%= store.created_at %></td>
+        <td><%= store.shipment.title %></td>
+        <td><%= link_to "Изменить", edit_store_path(store.id) %></td>
+        <td><%= link_to "Удалить", store_path(store.id), method: :delete, confirm: "Вы уверены?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

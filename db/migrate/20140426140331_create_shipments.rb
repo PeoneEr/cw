@@ -4,6 +4,7 @@ class CreateShipments < ActiveRecord::Migration
       t.string :title
       t.string :time_expired
       t.float :price
+      t.string :store_id
       t.timestamps
     end
   end
