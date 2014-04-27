@@ -1,0 +1,21 @@
+<div class="add_employee">
+  <%= link_to "Добавить", new_employee_path %>
+</div>
+<table>
+  <thead>
+    <th>ФИО</th>
+    <th>Дата рождения</th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.fio %></td>
+        <td><%= employee.birthday %></td>
+        <td><%= link_to "Изменить", edit_employee_path(employee.id) %></td>
+        <td><%= link_to "Удалить", employee_path(employee.id), method: :delete, confirm: "Вы уверены?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
