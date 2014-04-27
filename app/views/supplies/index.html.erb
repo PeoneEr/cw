@@ -7,7 +7,6 @@
     <th>Поставщик</th>
     <th>Склад</th>
     <th>Принял</th>
-    <th>Зал</th>
     <th>Дата поставки</th>
     <th>Количество</th>
     <th></th>
@@ -20,7 +19,6 @@
         <td><%= supply.supplier.title unless supply.supplier.nil? %></td>
         <td><%= supply.store.title %></td>
         <td><%= supply.employee.title %></td>
-        <td><%= supply.hall.title %></td>
         <td><%= supply.updated_at %></td>
         <td><%= supply.count %></td>
         <td><%= link_to "Изменить", edit_supply_path(supply.id) %></td>
