@@ -1,6 +1,7 @@
 <%= simple_form_for @shipment do |f| %>
   <%= f.input :title %>
   <%= f.input :time_expired, as: :select, collection: ["месяц", "два месяца", "полгода", "год", "неограничено"] %>
+  <%= f.input :hall_id, as: :select, collection: Hall.all.sort %>
   <%= f.input :price %>
   <%= f.submit "Добавить" %>
 <% end %>

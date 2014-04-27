@@ -1,0 +1,19 @@
+<div class="add_hall">
+  <%= link_to "Добавить", new_hall_path %>
+</div>
+<table>
+  <thead>
+    <th>Название</th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @halls.each do |hall| %>
+      <tr>
+        <td><%= hall.title %></td>
+        <td><%= link_to "Изменить", edit_hall_path(hall.id) %></td>
+        <td><%= link_to "Удалить", hall_path(hall.id), method: :delete, confirm: "Вы уверены?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

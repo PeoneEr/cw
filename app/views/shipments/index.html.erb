@@ -5,6 +5,7 @@
   <thead>
     <th>Название товара</th>
     <th>Срок годности</th>
+    <th>Зал</th>
     <th>Цена</th>
     <th></th>
     <th></th>
@@ -14,6 +15,7 @@
       <tr>
         <td><%= shipment.title %></td>
         <td><%= shipment.time_expired %></td>
+        <td><%= shipment.hall.title %></td>
         <td><%= shipment.price %></td>
         <td><%= link_to "Изменить", edit_shipment_path(shipment.id) %></td>
         <td><%= link_to "Удалить", shipment_path(shipment.id), method: :delete, confirm: "Вы уверены?" %></td>

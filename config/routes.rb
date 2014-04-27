@@ -6,6 +6,8 @@ Cw::Application.routes.draw do
   resources :employees
   resources :posts
   resources :positions
+  resources :workplaces
+  resources :halls
 
   root to: 'suppliers#index'
 end
