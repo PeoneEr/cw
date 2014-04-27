@@ -11,7 +11,7 @@
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
-        <td><%= employee.fio %></td>
+        <td><%= employee.title %></td>
         <td><%= employee.birthday %></td>
         <td><%= link_to "Изменить", edit_employee_path(employee.id) %></td>
         <td><%= link_to "Удалить", employee_path(employee.id), method: :delete, confirm: "Вы уверены?" %></td>
