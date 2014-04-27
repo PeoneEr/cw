@@ -3,18 +3,20 @@
 </div>
 <table>
   <thead>
-    <th>Принял</th>
+    <th>Название</th>
+    <th>Телефон</th>
+    <th>Адрес</th>
     <th>Дата принятия</th>
-    <th>Товар</th>
     <th></th>
     <th></th>
   </thead>
   <tbody>
     <% @stores.each do |store| %>
       <tr>
-        <td>Принял</td>
+        <td><%= store.title %></td>
+        <td><%= store.phone %></td>
+        <td><%= store.address %></td>
         <td><%= store.created_at %></td>
-        <td><%= store.shipment.title %></td>
         <td><%= link_to "Изменить", edit_store_path(store.id) %></td>
         <td><%= link_to "Удалить", store_path(store.id), method: :delete, confirm: "Вы уверены?" %></td>
       </tr>
