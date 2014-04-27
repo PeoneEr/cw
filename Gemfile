@@ -6,6 +6,8 @@ group :default do
   gem 'rails', '3.2.17'
   gem 'simple_form'
   gem 'inherited_resources'
+  gem 'russian', '~> 0.6.0'
+  gem 'thin'
 end
 
 group :development do

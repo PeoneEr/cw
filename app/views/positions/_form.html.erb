@@ -1,0 +1,8 @@
+<%= simple_form_for @position do |f| %>
+  <%= f.input :post_id, as: :select, collection: Post.all.sort %>
+  <%= f.input :employee_id, as: :select, collection: Employee.all.sort %>
+  <%= f.input :date_of_a_job, as: :date, start_year: Date.today.year - 10 %>
+  <%= f.input :date_of_a_left, as: :date, start_year: Date.today.year - 10 %>
+  <%= f.input :rate %>
+  <%= f.submit "Добавить" %>
+<% end %>

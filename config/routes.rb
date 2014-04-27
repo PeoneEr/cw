@@ -4,6 +4,8 @@ Cw::Application.routes.draw do
   resources :shipments
   resources :stores
   resources :employees
+  resources :posts
+  resources :positions
 
   root to: 'suppliers#index'
 end
