@@ -1,0 +1,24 @@
+<h1>Информация о сотрудниках</h1>
+<table>
+  <thead>
+    <th>ФИО</th>
+    <th>Дата рождения</th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.title %></td>
+        <td><%= employee.birthday %></td>
+        <td><%= link_to "Изменить", edit_employee_path(employee.id) %></td>
+        <td><%= link_to "Удалить", employee_path(employee.id), method: :delete, confirm: "Вы уверены?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if params[:utf8] %>
+  <h1>Информация о занимаемых должностях</h1>
+  <%= render 'positions/table' %>
+<% end %>

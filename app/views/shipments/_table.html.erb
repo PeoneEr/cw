@@ -1,0 +1,44 @@
+<table>
+  <thead>
+    <th>Название товара</th>
+    <th>Срок годности</th>
+    <th>Зал</th>
+    <th>Цена</th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @shipments.each do |shipment| %>
+      <tr>
+        <td><%= shipment.title %></td>
+        <td><%= shipment.time_expired %></td>
+        <td><%= shipment.hall.title %></td>
+        <td><%= shipment.price %></td>
+        <td><%= link_to "Изменить", edit_shipment_path(shipment.id) %></td>
+        <td><%= link_to "Удалить", shipment_path(shipment.id), method: :delete, confirm: "Вы уверены?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if params[:utf8] %>
+  <h1>Информация о поставках</h1>
+  <%= render 'supplies/table' %>
+  <% if params[:controller] == "shipments" %>
+    <h1>Информация о залe</h1>
+    <table>
+      <thead>
+        <th>Название</th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @hall.title %></td>
+          <td><%= link_to "Изменить", edit_hall_path(@hall.id) %></td>
+          <td><%= link_to "Удалить", hall_path(@hall.id), method: :delete, confirm: "Вы уверены?" %></td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+<% end %>

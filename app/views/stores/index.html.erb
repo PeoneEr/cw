@@ -1,25 +1,7 @@
 <div class="add_store">
   <%= link_to "Добавить", new_store_path %>
 </div>
-<table>
-  <thead>
-    <th>Название</th>
-    <th>Телефон</th>
-    <th>Адрес</th>
-    <th>Дата принятия</th>
-    <th></th>
-    <th></th>
-  </thead>
-  <tbody>
-    <% @stores.each do |store| %>
-      <tr>
-        <td><%= store.title %></td>
-        <td><%= store.phone %></td>
-        <td><%= store.address %></td>
-        <td><%= store.created_at %></td>
-        <td><%= link_to "Изменить", edit_store_path(store.id) %></td>
-        <td><%= link_to "Удалить", store_path(store.id), method: :delete, confirm: "Вы уверены?" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<%= render 'shared/search' %>
+
+<%= render 'table' %>

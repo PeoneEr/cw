@@ -1,0 +1,6 @@
+<div class="search" style="width: 25%; margin-bottom: 30px">
+  <%= simple_form_for :search, action: :search, method: :get do |f| %>
+    <%= f.submit "Искать", style: "float: right" %>
+    <%= f.input :q, label: false, placeholder: "Поиск", :input_html => { :value => params.try(:[], 'search').try(:[], 'q') } %>
+  <% end %>
+</div>

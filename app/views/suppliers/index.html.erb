@@ -1,6 +1,10 @@
-<div class="add_link">
-  <%= link_to "Добавить", new_supplier_path  %>
+<div class="menu">
+  <div class="add_link">
+    <%= link_to "Добавить", new_supplier_path  %>
+  </div>
+  <%= render 'shared/search' %>
 </div>
+<h1>Информация о поставщике</h1>
 <table>
   <thead>
     <th>Название</th>
@@ -23,3 +27,8 @@
     <% end %>
   </tbody>
 </table>
+
+<% if params[:utf8] %>
+  <h1>Информация о поставках</h1>
+  <%= render 'supplies/table' %>
+<% end %>

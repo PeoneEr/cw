@@ -1,29 +1,5 @@
 <div class="add_supply">
   <%= link_to "Добавить", new_supply_path %>
 </div>
-<table>
-  <thead>
-    <th>Название товара</th>
-    <th>Поставщик</th>
-    <th>Склад</th>
-    <th>Принял</th>
-    <th>Дата поставки</th>
-    <th>Количество</th>
-    <th></th>
-    <th></th>
-  </thead>
-  <tbody>
-    <% @supplies.each do |supply| %>
-      <tr>
-        <td><%= supply.shipment.title unless supply.shipment.nil? %></td>
-        <td><%= supply.supplier.title unless supply.supplier.nil? %></td>
-        <td><%= supply.store.title %></td>
-        <td><%= supply.employee.title %></td>
-        <td><%= supply.updated_at %></td>
-        <td><%= supply.count %></td>
-        <td><%= link_to "Изменить", edit_supply_path(supply.id) %></td>
-        <td><%= link_to "Удалить", supply_path(supply.id), method: :delete, confirm: "Вы уверены?" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<%= render 'table' %>

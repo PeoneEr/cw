@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <th>Название</th>
+    <th>Сотрудник</th>
+    <th>Ставка</th>
+    <th>Дата принятия на работу</th>
+    <th>Дата увольнения</th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @positions.each do |position| %>
+      <tr>
+        <td><%= position.post.title %></td>
+        <td><%= position.employee.title %></td>
+        <td><%= position.rate %></td>
+        <td><%= position.date_of_a_job %></td>
+        <td><%= position.date_of_a_left %></td>
+        <td><%= link_to "Изменить", edit_position_path(position.id) %></td>
+        <td><%= link_to "Удалить", position_path(position.id), method: :delete, confirm: "Вы уверены?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
